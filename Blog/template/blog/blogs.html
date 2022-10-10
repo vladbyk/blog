@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block page-content %}]
-<a href="url 'blogs_detail'">
+{% block page-content %}
 <div class="books">
     {% for book in books %}
+    <a href="{% url 'blog_detail' book.book_id %}">
     <div class="book">
         <h1>{{book.name}}</h1>
         <p> {{book.description}}</p>
         <p> {{book.author.name}}</p>
         <img src="{% static book.img %}">
     </div>
+    </a>
     {% endfor %}
 </div>
-</a>
 {% endblock %}

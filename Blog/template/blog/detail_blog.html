@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page-content %}]
+{% for book in books %}
+    <h1>{{book.name}}</h1>
+    <p> {{book.description}}</p>
+    <p> {{book.author.name}}</p>
+    <img src="{% static book.img %}">
+{% endfor %}
+{% endblock %}

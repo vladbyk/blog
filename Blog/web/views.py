@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import Book
-from django.http import HttpResponse
 
 
 def HomeView(request):
@@ -19,5 +18,7 @@ def BlogView(request):
 
 def Blog_detailView(request,num):
     print(num)
-    context = {}
-    return HttpResponse("<h1>Blog_detail</h1>")
+    context = {
+        'books': Book.objects.filter(book_id=num)
+    }
+    return render(request, 'blog/blogs.html', context)
