@@ -7,7 +7,7 @@ class Author(models.Model):
     sex = models.CharField(max_length=10,choices=(("W","Women"),("M","Men")))
 
 
-    def str(self):
+    def __str__(self):
         return f"{self.author_id} | {self.name}"
 
 
@@ -22,9 +22,9 @@ class Book(models.Model):
     description = models.TextField(verbose_name="Описание")
     author = models.ForeignKey(Author,on_delete=models.CASCADE,verbose_name="Автор")
     #author = models.ManyToManyField(Author)
+    img = models.CharField(max_length=150,verbose_name="Путь к изображению")
 
-
-    def str(self):
+    def __str__(self):
         return str(self.name)
 
     class Meta :

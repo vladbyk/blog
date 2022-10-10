@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block page-content %}
-<h1>Это страница Блогов</h1>
+<div class="books">
+    {% for book in books %}
+    <div class="book">
+        <h1>{{book.name}}</h1>
+        <p> {{book.description}}</p>
+        <p> {{book.author.name}}</p>
+        <img src="{% static book.img %}">
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
