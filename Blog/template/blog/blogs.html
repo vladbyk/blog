@@ -4,12 +4,12 @@
 <div class="books">
     {% for book in books %}
     <a href="{% url 'blog_detail' book.book_id %}">
-    <div class="book">
-        <h1>{{book.name}}</h1>
-        <p> {{book.description}}</p>
-        <p> {{book.author.name}}</p>
-        <img src="{% static book.img %}">
-    </div>
+        <div class="book">
+            <h1>{{book.name}}</h1>
+            <p> {{book.description}}</p>
+            <p> {{book.author.name}}</p>
+            <img src="{% static book.img %}">
+        </div>
     </a>
     {% endfor %}
 </div>

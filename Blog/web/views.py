@@ -21,4 +21,4 @@ def Blog_detailView(request,num):
     context = {
         'books': Book.objects.filter(book_id=num)
     }
-    return render(request, 'blog/blogs.html', context)
+    return render(request, 'blog/detail_blog.html', context)
